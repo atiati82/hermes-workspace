@@ -23,3 +23,14 @@ This workspace uses semantic Hermes swarm workers, not numbered-only lanes. The 
 - Prefer GBrain-first lookup for context-sensitive RAZSOC/Hermes/workflow decisions.
 - Builder implements; Reviewer gates; QA verifies behavior; Orchestrator routes and enforces greenlight.
 - Do not enable optional Hermes plugins globally unless the task explicitly needs them; record plugin/toolset alignment in `swarm.yaml` first.
+
+## Plan execution standard (set 2026-09-20)
+
+Substantial or multi-step autonomous work — an exhaustive audit or build, work that has
+previously returned half-done, parallel leaves or pipelines — uses the **`unlazy`** skill:
+write acceptance gates (`GATES.md`, one observable outcome per gate) *before* implementing,
+decompose with its Depth Tree, run only explicitly approved checks, re-verify evidence before
+reporting done. Trigger phrases: `/unlazy`, `$unlazy`, "tree N", "gates", "do not stop until
+it is done". Vendored globally — `~/.claude/skills/unlazy`, `~/.codex/skills/unlazy`, and the
+Antigravity `vendored-skills` plugin — so it applies the same way across Claude Code, Codex,
+and Antigravity, not just one runtime. Source: github.com/Leonxlnx/unlazy.
