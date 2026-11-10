@@ -3,3 +3,8 @@ allowBuilds:
   electron-winstaller: true
   esbuild: true
   unrs-resolver: true
+overrides:
+  '@tanstack/start-server-core': ^1.169.39
+  seroval: ^1.6.2
+  shell-quote: ^1.8.4
+  tinypool: ^2.1.2
